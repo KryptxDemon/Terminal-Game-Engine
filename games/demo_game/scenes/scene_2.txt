@@ -1,0 +1,6 @@
+ID=scene_2
+TEXT=You arrive at a quiet village. A merchant offers you a rusty key.
+CHOICE1=Accept the key and stay in the village|ending_good|item:+key,reputation:+1
+CHOICE2=Refuse and leave at night|ending_bad|reputation:-1
+CHOICE3=Try to open the locked shrine|secret_temple|requires:item:key
+

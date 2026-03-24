@@ -1,0 +1,4 @@
+ID=scene_3
+TEXT=Inside the cave, a wild beast attacks you from the darkness.
+CHOICE1=Fight the beast|ending_bad|health:-50
+CHOICE2=Run away|scene_2|health:-5

@@ -1,0 +1,4 @@
+ID=scene_1
+TEXT=This is the beginning of your story. Edit this scene to start your adventure.
+CHOICE1=Go to a good ending|ending_good
+CHOICE2=Go to a bad ending|ending_bad

@@ -1,0 +1,4 @@
+ID=scene_1
+TEXT=You wake up in a dark forest. There is a narrow path to the left and a cave to the right.
+CHOICE1=Take the left path|scene_2|gold:+5
+CHOICE2=Enter the cave|scene_3|health:-10

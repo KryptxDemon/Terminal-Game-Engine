@@ -1,0 +1,4 @@
+ID=scene_1
+TEXT=Welcome to the Haunted Dungeon! This is a choice based story game. Your actions will have consequences. Choose wisely.
+CHOICE1=Proceed|scene_2
+CHOICE2=Exit|ending_scene

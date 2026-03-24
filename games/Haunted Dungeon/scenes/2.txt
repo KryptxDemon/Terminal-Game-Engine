@@ -1,0 +1,4 @@
+ID=2
+TEXT=You are hungry and you need to find some food. You hear a noise nearby, it sounds like someone is crying.
+CHOICE1=You go check it out|3
+CHOICE2=You ignore the noise and proceed forward|4

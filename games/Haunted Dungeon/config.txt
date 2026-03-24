@@ -1,0 +1,2 @@
+GAME_NAME=Haunted Dungeon : Arch Nemesis
+START_SCENE=scene_1

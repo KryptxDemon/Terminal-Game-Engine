@@ -1,0 +1,3 @@
+GAME_NAME=Demo Adventure
+START_SCENE=scene_1
+
