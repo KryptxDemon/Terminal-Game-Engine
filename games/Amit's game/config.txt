@@ -1,0 +1,2 @@
+GAME_NAME=Amit's Adventure
+START_SCENE=scene_1

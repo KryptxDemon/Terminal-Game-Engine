@@ -1,0 +1,4 @@
+ID=scene_2
+TEXT=Shamne giye dekhlo oita ekta kukur er moto. Ki korbe?
+CHOICE1=kheye felbe|scene_3|taka+10
+CHOICE2=na dekhar bhaan kore pash diye hete jabe|scene_4

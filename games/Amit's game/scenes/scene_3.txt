@@ -1,0 +1,4 @@
+ID=scene_3
+TEXT=Kukur ti jege uthe and amit er dike akromon korte ashe.
+CHOICE1=Douranor cheshta korlo|ending_bad|taka-10|taka:15
+CHOICE2=shuye jabe|ending_good

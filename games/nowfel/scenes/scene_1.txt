@@ -1,0 +1,4 @@
+ID=scene_1
+TEXT=Nowfel wants you to play his game. Do you wish to proceed?
+CHOICE1=Yes|scene_2
+CHOICE2=No|ending_bad

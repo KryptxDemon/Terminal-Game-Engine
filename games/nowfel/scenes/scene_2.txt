@@ -1,0 +1,4 @@
+ID=scene_2
+TEXT=Nowfel is sleeping. You see a bag of cash beside him. What do you do?
+CHOICE1=You grab the bag and run away.|scene_3
+CHOICE2=You just go and sleep beside him.|ending_good

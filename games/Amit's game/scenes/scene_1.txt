@@ -1,0 +1,4 @@
+ID=scene_1
+TEXT=Amit katapahar e eka eka probesh korlo. Shamne ekta praani dekhlo. Shey bujhte parlo na oita ki. Ki korbe?
+CHOICE1=Shamne giye check korbe oita ki|scene_2
+CHOICE2=Paliye gelo|ending_bad
