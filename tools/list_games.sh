@@ -1,6 +1,6 @@
 #!/bin/bash
 
-BASE_GAMES_DIR="games"
+BASE_GAMES_DIR="../games"
 
 echo "=============================="
 echo "        AVAILABLE GAMES"

@@ -2,3 +2,30 @@
 [2026-04-04 12:06:07] Engine launched.
 [2026-04-04 12:07:01] Engine launched.
 [2026-04-04 12:08:09] Engine launched.
+[2026-04-08 09:49:29] Engine launched.
+[2026-04-08 09:51:57] Engine launched.
+[2026-04-08 10:10:03] Engine launched.
+[2026-04-08 10:10:20] Game selected: ../games/nowfel
+[2026-04-08 10:10:33] New game started for: ../games/nowfel
+[2026-04-08 10:10:33] Loaded scene: scene_1
+[2026-04-08 10:10:40] Player selected option 1: Yes
+[2026-04-08 10:10:40] Scene transition: scene_1 -> scene_2
+[2026-04-08 10:10:40] Loaded scene: scene_2
+[2026-04-08 10:10:49] Player selected option 2: You just go and sleep beside him.
+[2026-04-08 10:10:49] Scene transition: scene_2 -> ending_good
+[2026-04-08 10:10:49] Loaded scene: ending_good
+[2026-04-08 10:10:49] Reached ending: ending_good
+[2026-04-08 10:21:00] Engine launched.
+[2026-04-08 10:24:11] Engine launched.
+[2026-04-08 10:25:04] Engine launched.
+[2026-04-08 10:25:23] Game selected: ../games/Amit's game
+[2026-04-08 10:25:25] New game started for: ../games/Amit's game
+[2026-04-08 10:25:25] Loaded scene: scene_1
+[2026-04-08 10:25:32] Returned to main menu from scene: scene_1
+[2026-04-08 10:27:51] New game started for: ../games/Amit's game
+[2026-04-08 10:27:51] Loaded scene: scene_1
+[2026-04-08 10:28:04] Returned to main menu from scene: scene_1
+[2026-04-08 10:28:14] Game selected: ../games/demo_game
+[2026-04-08 10:28:17] Game selected: ../games/Amit's game
+[2026-04-08 10:32:34] Engine launched.
+[2026-04-08 10:42:37] Engine launched.
