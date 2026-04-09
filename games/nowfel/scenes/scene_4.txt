@@ -1,0 +1,3 @@
+ID=scene_4
+TEXT=This time Nowfel catch you. What will you do ?
+END=1

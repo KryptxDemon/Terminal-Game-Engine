@@ -1,6 +1,6 @@
 #!/bin/bash
 
-BASE_GAMES_DIR="games"
+BASE_GAMES_DIR="../games"
 
 choose_game() {
     mapfile -t game_dirs < <(find "$BASE_GAMES_DIR" -mindepth 1 -maxdepth 1 -type d | sort)
