@@ -1,0 +1,6 @@
+GAME_DIR=/mnt/d/OSlab/Terminal-Game-Engine/games/amits_game
+CURRENT_SCENE=scene_2
+HEALTH=100
+GOLD=0
+REPUTATION=0
+INVENTORY=

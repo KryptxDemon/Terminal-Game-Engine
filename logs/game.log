@@ -231,3 +231,37 @@
 [2026-04-27 14:51:00] Loaded scene: ending_good
 [2026-04-27 14:51:00] Awarded +50 points to asif for first good ending in Amit's Adventure
 [2026-04-27 14:51:00] Reached ending: ending_good
+[2026-04-27 15:13:40] Engine launched.
+[2026-04-27 15:16:14] Game selected: /mnt/d/OSlab/Terminal-Game-Engine/games/amits_game
+[2026-04-27 15:16:37] New game started for: /mnt/d/OSlab/Terminal-Game-Engine/games/amits_game
+[2026-04-27 15:16:37] Loaded scene: scene_1
+[2026-04-27 15:17:37] Player selected option 1: Shamne giye check korbe oita ki
+[2026-04-27 15:17:37] Scene transition: scene_1 -> scene_2
+[2026-04-27 15:17:37] Loaded scene: scene_2
+[2026-04-27 15:20:41] Game saved to slot1 at scene: scene_2 for game: /mnt/d/OSlab/Terminal-Game-Engine/games/amits_game
+[2026-04-27 15:20:43] Loaded scene: scene_2
+[2026-04-27 15:20:46] Returned to main menu from scene: scene_2
+[2026-04-27 15:21:45] Engine launched.
+[2026-04-27 15:22:12] Game selected: /mnt/d/OSlab/Terminal-Game-Engine/games/Haunted Dungeon
+[2026-04-27 15:22:14] New game started for: /mnt/d/OSlab/Terminal-Game-Engine/games/Haunted Dungeon
+[2026-04-27 15:22:14] Loaded scene: scene_1
+[2026-04-27 15:22:17] Player selected option 1: Proceed
+[2026-04-27 15:22:17] Scene transition: scene_1 -> scene_2
+[2026-04-27 15:22:17] Loaded scene: 2
+[2026-04-27 15:22:20] Player selected option 1: You go check it out
+[2026-04-27 15:22:20] Scene transition: 2 -> ending_bad
+[2026-04-27 15:22:20] Loaded scene: ending_bad
+[2026-04-27 15:22:20] Applied -25 points to Nowfel for bad ending in Haunted Dungeon : Arch Nemesis
+[2026-04-27 15:22:20] Reached ending: ending_bad
+[2026-04-27 15:22:30] New game started for: /mnt/d/OSlab/Terminal-Game-Engine/games/Haunted Dungeon
+[2026-04-27 15:22:30] Loaded scene: scene_1
+[2026-04-27 15:22:32] Player selected option 1: Proceed
+[2026-04-27 15:22:32] Scene transition: scene_1 -> scene_2
+[2026-04-27 15:22:32] Loaded scene: 2
+[2026-04-27 15:22:37] Player selected option 1: You go check it out
+[2026-04-27 15:22:37] Scene transition: 2 -> ending_bad
+[2026-04-27 15:22:37] Loaded scene: ending_bad
+[2026-04-27 15:22:37] Applied -25 points to Nowfel for bad ending in Haunted Dungeon : Arch Nemesis
+[2026-04-27 15:22:37] Reached ending: ending_bad
+[2026-04-27 15:23:56] New game started for: /mnt/d/OSlab/Terminal-Game-Engine/games/Haunted Dungeon
+[2026-04-27 15:23:56] Loaded scene: scene_1

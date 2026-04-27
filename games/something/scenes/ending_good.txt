@@ -1,0 +1,3 @@
+ID=ending_good
+TEXT=This is the good ending of your custom game.
+END=1
