@@ -90,3 +90,144 @@
 [2026-04-04 13:02:44] Scene transition: scene_3 -> ending_bad
 [2026-04-04 13:02:44] Loaded scene: ending_bad
 [2026-04-04 13:02:44] Reached ending: ending_bad
+[2026-04-27 12:47:24] Engine launched.
+[2026-04-27 12:51:24] Engine launched.
+[2026-04-27 12:51:39] Game selected: /mnt/d/OSlab/Terminal-Game-Engine/games/Amit's game
+[2026-04-27 12:51:45] Game selected: /mnt/d/OSlab/Terminal-Game-Engine/games/Amit's game
+[2026-04-27 12:51:46] New game started for: /mnt/d/OSlab/Terminal-Game-Engine/games/Amit's game
+[2026-04-27 12:51:46] ERROR: Missing scene file: /mnt/d/OSlab/Terminal-Game-Engine/games/Amit's game/scenes/scene_1.txt
+[2026-04-27 12:52:27] Engine launched.
+[2026-04-27 12:52:47] Game selected: /mnt/d/OSlab/Terminal-Game-Engine/games/amits_game
+[2026-04-27 12:52:50] New game started for: /mnt/d/OSlab/Terminal-Game-Engine/games/amits_game
+[2026-04-27 12:52:50] ERROR: Missing scene file: /mnt/d/OSlab/Terminal-Game-Engine/games/amits_game/scenes/scene_1.txt
+[2026-04-27 12:55:33] Engine launched.
+[2026-04-27 12:56:07] Engine launched.
+[2026-04-27 12:56:17] Game selected: /mnt/d/OSlab/Terminal-Game-Engine/games/demo_game
+[2026-04-27 12:56:19] New game started for: /mnt/d/OSlab/Terminal-Game-Engine/games/demo_game
+[2026-04-27 12:56:19] ERROR: Missing scene file: /mnt/d/OSlab/Terminal-Game-Engine/games/demo_game/scenes/scene_1.txt
+[2026-04-27 13:03:57] Engine launched.
+[2026-04-27 13:04:06] Game selected: /mnt/d/OSlab/Terminal-Game-Engine/games/amits_game
+[2026-04-27 13:04:07] New game started for: /mnt/d/OSlab/Terminal-Game-Engine/games/amits_game
+[2026-04-27 13:04:07] Loaded scene: scene_1
+[2026-04-27 13:04:10] Player selected option 1: Shamne giye check korbe oita ki
+[2026-04-27 13:04:10] Scene transition: scene_1 -> scene_2
+[2026-04-27 13:04:10] ERROR: Missing scene file: /mnt/d/OSlab/Terminal-Game-Engine/games/amits_game/scenes/scene_2.txt
+[2026-04-27 13:06:12] Engine launched.
+[2026-04-27 14:32:21] Engine launched.
+[2026-04-27 14:32:29] Game selected: /mnt/d/OSlab/Terminal-Game-Engine/games/amits_game
+[2026-04-27 14:32:34] New game started for: /mnt/d/OSlab/Terminal-Game-Engine/games/amits_game
+[2026-04-27 14:32:34] Loaded scene: scene_1
+[2026-04-27 14:32:35] Player selected option 1: Shamne giye check korbe oita ki
+[2026-04-27 14:32:35] Scene transition: scene_1 -> scene_2
+[2026-04-27 14:32:35] Loaded scene: scene_2
+[2026-04-27 14:32:37] Player selected option 1: kheye felbe
+[2026-04-27 14:32:37] Scene transition: scene_2 -> scene_3
+[2026-04-27 14:32:37] Loaded scene: scene_3
+[2026-04-27 14:32:39] Player selected option 2: shuye jabe
+[2026-04-27 14:32:39] Scene transition: scene_3 -> ending_good
+[2026-04-27 14:32:39] Loaded scene: ending_good
+[2026-04-27 14:32:39] ERROR: No available choices found in scene ending_good
+[2026-04-27 14:33:44] Engine launched.
+[2026-04-27 14:33:59] Game selected: /mnt/d/OSlab/Terminal-Game-Engine/games/amits_game
+[2026-04-27 14:34:08] Game selected: /mnt/d/OSlab/Terminal-Game-Engine/games/amits_game
+[2026-04-27 14:37:21] Engine launched.
+[2026-04-27 14:37:29] Game selected: /mnt/d/OSlab/Terminal-Game-Engine/games/amits_game
+[2026-04-27 14:37:32] New game started for: /mnt/d/OSlab/Terminal-Game-Engine/games/amits_game
+[2026-04-27 14:37:32] Loaded scene: scene_1
+[2026-04-27 14:37:33] Player selected option 1: Shamne giye check korbe oita ki
+[2026-04-27 14:37:33] Scene transition: scene_1 -> scene_2
+[2026-04-27 14:37:33] Loaded scene: scene_2
+[2026-04-27 14:37:34] Player selected option 2: na dekhar bhaan kore pash diye hete jabe
+[2026-04-27 14:37:34] Scene transition: scene_2 -> scene_4
+[2026-04-27 14:37:34] ERROR: Missing scene file: /mnt/d/OSlab/Terminal-Game-Engine/games/amits_game/scenes/scene_4.txt
+[2026-04-27 14:37:49] Engine launched.
+[2026-04-27 14:38:00] Game selected: /mnt/d/OSlab/Terminal-Game-Engine/games/Haunted Dungeon
+[2026-04-27 14:38:03] New game started for: /mnt/d/OSlab/Terminal-Game-Engine/games/Haunted Dungeon
+[2026-04-27 14:38:03] Loaded scene: scene_1
+[2026-04-27 14:38:10] Player selected option 1: Proceed
+[2026-04-27 14:38:10] Scene transition: scene_1 -> scene_2
+[2026-04-27 14:38:10] ERROR: Missing scene file: /mnt/d/OSlab/Terminal-Game-Engine/games/Haunted Dungeon/scenes/scene_2.txt
+[2026-04-27 14:40:57] Engine launched.
+[2026-04-27 14:41:06] Game selected: /mnt/d/OSlab/Terminal-Game-Engine/games/amits_game
+[2026-04-27 14:41:07] New game started for: /mnt/d/OSlab/Terminal-Game-Engine/games/amits_game
+[2026-04-27 14:41:08] Loaded scene: scene_1
+[2026-04-27 14:41:09] Player selected option 1: Shamne giye check korbe oita ki
+[2026-04-27 14:41:09] Scene transition: scene_1 -> scene_2
+[2026-04-27 14:41:09] Loaded scene: scene_2
+[2026-04-27 14:41:10] Player selected option 2: na dekhar bhaan kore pash diye hete jabe
+[2026-04-27 14:41:10] Scene transition: scene_2 -> ending_bad
+[2026-04-27 14:41:10] Loaded scene: ending_bad
+[2026-04-27 14:41:10] Score recorded: asif scored 100 in Amit's Adventure
+[2026-04-27 14:41:10] Reached ending: ending_bad
+[2026-04-27 14:41:15] Game selected: /mnt/d/OSlab/Terminal-Game-Engine/games/Haunted Dungeon
+[2026-04-27 14:41:16] New game started for: /mnt/d/OSlab/Terminal-Game-Engine/games/Haunted Dungeon
+[2026-04-27 14:41:16] Loaded scene: scene_1
+[2026-04-27 14:41:18] Player selected option 1: Proceed
+[2026-04-27 14:41:18] Scene transition: scene_1 -> scene_2
+[2026-04-27 14:41:18] Loaded scene: 2
+[2026-04-27 14:41:19] Player selected option 2: You ignore the noise and proceed forward
+[2026-04-27 14:41:19] Scene transition: 2 -> ending_good
+[2026-04-27 14:41:19] Loaded scene: ending_good
+[2026-04-27 14:41:19] Score recorded: asif scored 100 in Haunted Dungeon : Arch Nemesis
+[2026-04-27 14:41:19] Reached ending: ending_good
+[2026-04-27 14:42:33] Game ended by user.
+[2026-04-27 14:42:45] Engine launched.
+[2026-04-27 14:49:08] Game selected: /mnt/d/OSlab/Terminal-Game-Engine/games/amits_game
+[2026-04-27 14:49:12] Game selected: /mnt/d/OSlab/Terminal-Game-Engine/games/nowfel
+[2026-04-27 14:49:13] Game selected: /mnt/d/OSlab/Terminal-Game-Engine/games/nowfel
+[2026-04-27 14:49:14] New game started for: /mnt/d/OSlab/Terminal-Game-Engine/games/nowfel
+[2026-04-27 14:49:14] Loaded scene: scene_1
+[2026-04-27 14:49:14] Player selected option 1: Yes
+[2026-04-27 14:49:14] Scene transition: scene_1 -> scene_2
+[2026-04-27 14:49:14] Loaded scene: scene_2
+[2026-04-27 14:49:15] Player selected option 1: You grab the bag and run away.
+[2026-04-27 14:49:15] Scene transition: scene_2 -> scene_3
+[2026-04-27 14:49:15] Loaded scene: scene_3
+[2026-04-27 14:49:16] Player selected option 1: You stop and pretend that nothing happened.
+[2026-04-27 14:49:16] Scene transition: scene_3 -> ending_bad
+[2026-04-27 14:49:16] Loaded scene: ending_bad
+[2026-04-27 14:49:16] Score recorded: asif scored 100 in Nowfel's Game
+[2026-04-27 14:49:16] Reached ending: ending_bad
+[2026-04-27 14:49:17] Game ended by user.
+[2026-04-27 14:49:23] Engine launched.
+[2026-04-27 14:49:45] Game selected: /mnt/d/OSlab/Terminal-Game-Engine/games/amits_game
+[2026-04-27 14:49:48] New game started for: /mnt/d/OSlab/Terminal-Game-Engine/games/amits_game
+[2026-04-27 14:49:48] Loaded scene: scene_1
+[2026-04-27 14:49:50] Player selected option 1: Shamne giye check korbe oita ki
+[2026-04-27 14:49:50] Scene transition: scene_1 -> scene_2
+[2026-04-27 14:49:51] Loaded scene: scene_2
+[2026-04-27 14:49:52] Player selected option 2: na dekhar bhaan kore pash diye hete jabe
+[2026-04-27 14:49:52] Scene transition: scene_2 -> ending_bad
+[2026-04-27 14:49:52] Loaded scene: ending_bad
+[2026-04-27 14:49:52] Reached non-good ending in Amit's Adventure: ending_bad
+[2026-04-27 14:49:52] Reached ending: ending_bad
+[2026-04-27 14:49:54] Game ended by user.
+[2026-04-27 14:50:08] Engine launched.
+[2026-04-27 14:50:18] Game selected: /mnt/d/OSlab/Terminal-Game-Engine/games/amits_game
+[2026-04-27 14:50:27] New game started for: /mnt/d/OSlab/Terminal-Game-Engine/games/amits_game
+[2026-04-27 14:50:27] Loaded scene: scene_1
+[2026-04-27 14:50:28] Player selected option 1: Shamne giye check korbe oita ki
+[2026-04-27 14:50:28] Scene transition: scene_1 -> scene_2
+[2026-04-27 14:50:28] Loaded scene: scene_2
+[2026-04-27 14:50:32] Player selected option 2: na dekhar bhaan kore pash diye hete jabe
+[2026-04-27 14:50:32] Scene transition: scene_2 -> ending_bad
+[2026-04-27 14:50:32] Loaded scene: ending_bad
+[2026-04-27 14:50:33] Reached non-good ending in Amit's Adventure: ending_bad
+[2026-04-27 14:50:33] Reached ending: ending_bad
+[2026-04-27 14:50:34] Game ended by user.
+[2026-04-27 14:50:42] Engine launched.
+[2026-04-27 14:50:50] Game selected: /mnt/d/OSlab/Terminal-Game-Engine/games/amits_game
+[2026-04-27 14:50:52] Game selected: /mnt/d/OSlab/Terminal-Game-Engine/games/amits_game
+[2026-04-27 14:50:52] New game started for: /mnt/d/OSlab/Terminal-Game-Engine/games/amits_game
+[2026-04-27 14:50:52] Loaded scene: scene_1
+[2026-04-27 14:50:54] Player selected option 1: Shamne giye check korbe oita ki
+[2026-04-27 14:50:54] Scene transition: scene_1 -> scene_2
+[2026-04-27 14:50:54] Loaded scene: scene_2
+[2026-04-27 14:50:57] Player selected option 1: kheye felbe
+[2026-04-27 14:50:57] Scene transition: scene_2 -> scene_3
+[2026-04-27 14:50:58] Loaded scene: scene_3
+[2026-04-27 14:51:00] Player selected option 2: shuye jabe
+[2026-04-27 14:51:00] Scene transition: scene_3 -> ending_good
+[2026-04-27 14:51:00] Loaded scene: ending_good
+[2026-04-27 14:51:00] Awarded +50 points to asif for first good ending in Amit's Adventure
+[2026-04-27 14:51:00] Reached ending: ending_good

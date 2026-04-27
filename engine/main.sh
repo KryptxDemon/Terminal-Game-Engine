@@ -1,8 +1,15 @@
 #!/bin/bash
 
-BASE_GAMES_DIR="../games"
-LOG_FILE="logs/game.log"
-SAVE_DIR="saves"
+SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+PROJECT_ROOT="$(cd "$SCRIPT_DIR/.." && pwd)"
+
+source "$SCRIPT_DIR/auth.sh"
+
+BASE_GAMES_DIR="$PROJECT_ROOT/games"
+LOG_FILE="$PROJECT_ROOT/logs/game.log"
+SAVE_DIR="$PROJECT_ROOT/database/saves/$CURRENT_USER"
+LEADERBOARD_FILE="$PROJECT_ROOT/database/leaderboard.db"
+GOOD_ENDING_REWARDS_FILE="$PROJECT_ROOT/database/good_ending_rewards.db"
 
 # Selected game info
 GAME_DIR=""
@@ -55,6 +62,72 @@ print_header() {
 
 pause_screen() {
     read -p "Press Enter to continue..."
+}
+
+read_kv_value() {
+    local key="$1"
+    local file="$2"
+    grep "^${key}=" "$file" | head -n1 | cut -d'=' -f2- | tr -d '\r'
+}
+
+normalize_scene_token() {
+    local token="$1"
+    token="${token%$'\r'}"
+    token="${token%.txt}"
+
+    if [[ "$token" =~ ^scene_(.+)$ ]]; then
+        token="${BASH_REMATCH[1]}"
+    fi
+
+    echo "$token"
+}
+
+resolve_scene_file() {
+    local scene_ref="$1"
+    local scenes_dir="$GAME_DIR/scenes"
+    local normalized_ref
+    local candidate
+    local scene_file
+    local file_id
+
+    scene_ref="${scene_ref%$'\r'}"
+    scene_ref="${scene_ref%.txt}"
+
+    for candidate in "$scene_ref.txt"; do
+        if [ -f "$scenes_dir/$candidate" ]; then
+            echo "$scenes_dir/$candidate"
+            return 0
+        fi
+    done
+
+    if [[ "$scene_ref" =~ ^scene_(.+)$ ]]; then
+        candidate="${BASH_REMATCH[1]}.txt"
+        if [ -f "$scenes_dir/$candidate" ]; then
+            echo "$scenes_dir/$candidate"
+            return 0
+        fi
+    elif [[ "$scene_ref" =~ ^[0-9]+$ ]]; then
+        candidate="scene_${scene_ref}.txt"
+        if [ -f "$scenes_dir/$candidate" ]; then
+            echo "$scenes_dir/$candidate"
+            return 0
+        fi
+    fi
+
+    normalized_ref="$(normalize_scene_token "$scene_ref")"
+
+    for scene_file in "$scenes_dir"/*.txt; do
+        [ -f "$scene_file" ] || continue
+        file_id="$(read_kv_value "ID" "$scene_file")"
+        [ -z "$file_id" ] && continue
+
+        if [ "$(normalize_scene_token "$file_id")" = "$normalized_ref" ]; then
+            echo "$scene_file"
+            return 0
+        fi
+    done
+
+    return 1
 }
 
 has_item() {
@@ -225,8 +298,9 @@ choose_game() {
             continue
         fi
 
-        GAME_NAME=$(grep '^GAME_NAME=' "$CONFIG_FILE" | cut -d'=' -f2-)
-        START_SCENE=$(grep '^START_SCENE=' "$CONFIG_FILE" | cut -d'=' -f2-)
+        GAME_NAME=$(read_kv_value "GAME_NAME" "$CONFIG_FILE")
+        START_SCENE=$(read_kv_value "START_SCENE" "$CONFIG_FILE")
+        START_SCENE="${START_SCENE%.txt}"
 
         if [ -z "$START_SCENE" ]; then
             echo "${RED}Selected game config is invalid.${RESET}"
@@ -297,8 +371,8 @@ load_game() {
         for slot in slot1 slot2 slot3; do
             save_file="$SAVE_DIR/${slot}.txt"
             if [ -f "$save_file" ]; then
-                slot_game=$(grep '^GAME_DIR=' "$save_file" | cut -d'=' -f2-)
-                slot_scene=$(grep '^CURRENT_SCENE=' "$save_file" | cut -d'=' -f2-)
+                slot_game=$(read_kv_value "GAME_DIR" "$save_file")
+                slot_scene=$(read_kv_value "CURRENT_SCENE" "$save_file")
                 echo "$slot - Saved | Game: ${slot_game:-Unknown} | Scene: ${slot_scene:-Unknown}"
             else
                 echo "$slot - Empty"
@@ -331,12 +405,13 @@ load_game() {
         fi
 
         CURRENT_SAVE_SLOT="$slot_name"
-        GAME_DIR=$(grep '^GAME_DIR=' "$save_file" | cut -d'=' -f2-)
-        CURRENT_SCENE=$(grep '^CURRENT_SCENE=' "$save_file" | cut -d'=' -f2-)
-        HEALTH=$(grep '^HEALTH=' "$save_file" | cut -d'=' -f2-)
-        GOLD=$(grep '^GOLD=' "$save_file" | cut -d'=' -f2-)
-        REPUTATION=$(grep '^REPUTATION=' "$save_file" | cut -d'=' -f2-)
-        INVENTORY=$(grep '^INVENTORY=' "$save_file" | cut -d'=' -f2-)
+        GAME_DIR=$(read_kv_value "GAME_DIR" "$save_file")
+        CURRENT_SCENE=$(read_kv_value "CURRENT_SCENE" "$save_file")
+        CURRENT_SCENE="${CURRENT_SCENE%.txt}"
+        HEALTH=$(read_kv_value "HEALTH" "$save_file")
+        GOLD=$(read_kv_value "GOLD" "$save_file")
+        REPUTATION=$(read_kv_value "REPUTATION" "$save_file")
+        INVENTORY=$(read_kv_value "INVENTORY" "$save_file")
 
         if [ -z "$GAME_DIR" ] || [ -z "$CURRENT_SCENE" ]; then
             echo
@@ -356,8 +431,9 @@ load_game() {
             return 1
         fi
 
-        GAME_NAME=$(grep '^GAME_NAME=' "$CONFIG_FILE" | cut -d'=' -f2-)
-        START_SCENE=$(grep '^START_SCENE=' "$CONFIG_FILE" | cut -d'=' -f2-)
+        GAME_NAME=$(read_kv_value "GAME_NAME" "$CONFIG_FILE")
+        START_SCENE=$(read_kv_value "START_SCENE" "$CONFIG_FILE")
+        START_SCENE="${START_SCENE%.txt}"
 
         log_event "Game loaded from $slot_name. Game: $GAME_DIR | Scene: $CURRENT_SCENE"
         return 0
@@ -374,6 +450,135 @@ start_new_game() {
     log_event "New game started for: $GAME_DIR"
 }
 
+is_good_ending_scene() {
+    local scene_id="$1"
+    local normalized_scene
+
+    normalized_scene="$(echo "$scene_id" | tr '[:upper:]' '[:lower:]' | tr -d '\r')"
+    [[ "$normalized_scene" == *good* ]]
+}
+
+is_bad_ending_scene() {
+    local scene_id="$1"
+    local normalized_scene
+
+    normalized_scene="$(echo "$scene_id" | tr '[:upper:]' '[:lower:]' | tr -d '\r')"
+    [[ "$normalized_scene" == *bad* ]]
+}
+
+update_user_points() {
+    local user="$1"
+    local delta="$2"
+    local current_points=0
+    local new_points=0
+    local temp_file
+
+    if [ -f "$LEADERBOARD_FILE" ]; then
+        current_points=$(awk -F'|' -v user="$user" '
+            $1 == user && $2 ~ /^-?[0-9]+$/ { print $2; found=1; exit }
+            END { if (!found) print 0 }
+        ' "$LEADERBOARD_FILE")
+    fi
+
+    new_points=$((current_points + delta))
+    temp_file="$(mktemp)"
+
+    if [ -f "$LEADERBOARD_FILE" ]; then
+        awk -F'|' -v user="$user" -v points="$new_points" '
+            BEGIN { updated=0 }
+            $1 == user {
+                if (!updated) {
+                    print user "|" points
+                    updated=1
+                }
+                next
+            }
+            $1 != "" && $2 ~ /^-?[0-9]+$/ { print $1 "|" $2 }
+            END {
+                if (!updated) {
+                    print user "|" points
+                }
+            }
+        ' "$LEADERBOARD_FILE" > "$temp_file"
+    else
+        echo "$user|$new_points" > "$temp_file"
+    fi
+
+    mv "$temp_file" "$LEADERBOARD_FILE"
+}
+
+award_good_ending_points() {
+    local scene_id="$1"
+    local reward_key
+
+    if ! is_good_ending_scene "$scene_id"; then
+        log_event "Reached non-good ending in $GAME_NAME: $scene_id"
+        return
+    fi
+
+    mkdir -p "$PROJECT_ROOT/database"
+    reward_key="$CURRENT_USER|$GAME_DIR"
+
+    if [ -f "$GOOD_ENDING_REWARDS_FILE" ] && grep -Fqx "$reward_key" "$GOOD_ENDING_REWARDS_FILE"; then
+        log_event "Good ending already rewarded for user $CURRENT_USER in game $GAME_NAME"
+        return
+    fi
+
+    echo "$reward_key" >> "$GOOD_ENDING_REWARDS_FILE"
+    update_user_points "$CURRENT_USER" 50
+    log_event "Awarded +50 points to $CURRENT_USER for first good ending in $GAME_NAME"
+}
+
+apply_ending_points() {
+    local scene_id="$1"
+    local good_reward_key
+
+    mkdir -p "$PROJECT_ROOT/database"
+
+    if is_good_ending_scene "$scene_id"; then
+        good_reward_key="$CURRENT_USER|$GAME_DIR"
+
+        if [ -f "$GOOD_ENDING_REWARDS_FILE" ] && grep -Fqx "$good_reward_key" "$GOOD_ENDING_REWARDS_FILE"; then
+            log_event "Good ending already rewarded for user $CURRENT_USER in game $GAME_NAME"
+            return
+        fi
+
+        echo "$good_reward_key" >> "$GOOD_ENDING_REWARDS_FILE"
+        update_user_points "$CURRENT_USER" 50
+        log_event "Awarded +50 points to $CURRENT_USER for first good ending in $GAME_NAME"
+        return
+    fi
+
+    if is_bad_ending_scene "$scene_id"; then
+        update_user_points "$CURRENT_USER" -25
+        log_event "Applied -25 points to $CURRENT_USER for bad ending in $GAME_NAME"
+        return
+    fi
+
+    log_event "Reached neutral ending in $GAME_NAME: $scene_id"
+}
+
+show_leaderboard() {
+    print_header "GLOBAL LEADERBOARD"
+
+    if [ ! -f "$LEADERBOARD_FILE" ]; then
+        echo "No scores yet."
+        pause_screen
+        return
+    fi
+
+    echo "Top 3 users by total points:"
+    echo
+
+    awk -F'|' 'NF >= 2 && $2 ~ /^-?[0-9]+$/' "$LEADERBOARD_FILE" \
+    | sort -t '|' -k2,2nr -k1,1 \
+    | head -3 \
+    | awk -F'|' '{printf "%d. %-20s %5s points\n", NR, $1, $2}'
+
+    echo
+    pause_screen
+}
+
 show_main_menu() {
     while true; do
         print_header "CHOICE GAME ENGINE"
@@ -382,7 +587,8 @@ show_main_menu() {
         echo "1. Select Game"
         echo "2. Start New Game"
         echo "3. Load Game"
-        echo "4. Exit"
+        echo "4. Leaderboard"
+	echo "5. Exit"
         echo
 
         read -p "Enter your choice: " menu_choice
@@ -407,9 +613,12 @@ show_main_menu() {
                 fi
                 ;;
             4)
-                echo "Goodbye."
-                exit 0
+                show_leaderboard
                 ;;
+5)
+    echo "Goodbye."
+    exit 0
+    ;;
             *)
                 echo
                 echo "${RED}Invalid choice.${RESET}"
@@ -424,21 +633,24 @@ mkdir -p "$SAVE_DIR"
 
 log_event "Engine launched."
 
+auth_menu
+
 while true; do
     show_main_menu
 
     while true; do
-        SCENE_FILE="$GAME_DIR/scenes/$CURRENT_SCENE.txt"
-
-        if [ ! -f "$SCENE_FILE" ]; then
-            echo "${RED}Error: scene file not found: $SCENE_FILE${RESET}"
-            log_event "ERROR: Missing scene file: $SCENE_FILE"
-            exit 1
+        if ! SCENE_FILE="$(resolve_scene_file "$CURRENT_SCENE")"; then
+            echo "${RED}Error: scene file not found for scene: $CURRENT_SCENE${RESET}"
+            log_event "ERROR: Missing scene file for scene reference: $CURRENT_SCENE"
+            echo
+            echo "Returning to main menu."
+            pause_screen
+            break
         fi
 
-        SCENE_ID=$(grep '^ID=' "$SCENE_FILE" | cut -d'=' -f2-)
-        SCENE_TEXT=$(grep '^TEXT=' "$SCENE_FILE" | cut -d'=' -f2-)
-        END_FLAG=$(grep '^END=' "$SCENE_FILE" | cut -d'=' -f2-)
+        SCENE_ID=$(read_kv_value "ID" "$SCENE_FILE")
+        SCENE_TEXT=$(read_kv_value "TEXT" "$SCENE_FILE")
+        END_FLAG=$(read_kv_value "END" "$SCENE_FILE")
 
         print_header "$GAME_NAME"
         echo "${BOLD}Health:${RESET} $HEALTH | ${BOLD}Gold:${RESET} $GOLD | ${BOLD}Reputation:${RESET} $REPUTATION"
@@ -459,7 +671,9 @@ while true; do
         fi
 
         if [ "$END_FLAG" = "1" ]; then
-            echo "${GREEN}===== THE END =====${RESET}"
+                apply_ending_points "$SCENE_ID"
+
+                echo "${GREEN}===== THE END =====${RESET}"
             echo
             log_event "Reached ending: $SCENE_ID"
             echo "1. Return to Main Menu"
@@ -487,6 +701,8 @@ while true; do
 
         while IFS= read -r line; do
             if [[ "$line" == CHOICE* ]]; then
+                # Handle CRLF scene files so parsed targets do not retain '\r'.
+                line="${line%$'\r'}"
                 choice_data="${line#*=}"
                 IFS='|' read -r choice_text choice_target extra1 extra2 <<< "$choice_data"
 
