@@ -1,0 +1,5 @@
+ID=11
+TEXT=The tunnel opens beneath the castle into a hidden chapel where the missing King stands before a chained shadow bound to the altar. The air tastes of iron and candle smoke, and the pendant in your pouch begins to warm.
+CHOICE1=Read the seal with the pendant|14|requires:item:queen_pendant
+CHOICE2=Challenge the shadow directly|13
+CHOICE3=Flee back through the tunnel|7

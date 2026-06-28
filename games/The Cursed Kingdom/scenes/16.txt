@@ -1,0 +1,3 @@
+ID=16
+TEXT=The sword sinks into the altar with a burst of white light. The shadow breaks apart, the Crown of Thorns cracks open, and King Aldren falls to one knee, free at last. By sunrise the curse is gone, the fields begin to green again, and Eldoria names you the scout who saved the realm.
+END=1

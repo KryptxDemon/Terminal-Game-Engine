@@ -1,0 +1,5 @@
+ID=7
+TEXT=The dungeon is damp and silent. Most cells are empty, but one has shattered iron bars bent outward. Deep claw marks cover the walls. At the end of the corridor, you see a narrow tunnel disappearing into darkness.
+CHOICE1=Follow the tunnel|11
+CHOICE2=Return to the throne room|5
+CHOICE3=Leave the castle and head to the village.|4

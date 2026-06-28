@@ -1,0 +1,5 @@
+ID=3
+TEXT=You arrive at the ancient castle. The gates are open, yet no guards stand watch. The halls are silent except for distant footsteps echoing through the stone corridors.
+CHOICE1=Enter the throne room|5
+CHOICE2=Search the royal library|6
+CHOICE3=Explore the castle dungeon|7

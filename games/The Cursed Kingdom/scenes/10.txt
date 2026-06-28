@@ -1,0 +1,5 @@
+ID=10
+TEXT=The wounded hunter says the forest creatures are not wild at all. They move like servants of something beneath the roots, and every trail he followed ended near a buried stone arch facing the castle.
+CHOICE1=Track the trail into the forest sanctum|12
+CHOICE2=Take the hunter's map back to the village|4
+CHOICE3=Head straight for the castle tunnels|7

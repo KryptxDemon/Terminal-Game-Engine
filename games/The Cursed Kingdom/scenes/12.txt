@@ -1,0 +1,5 @@
+ID=12
+TEXT=The hidden chamber beneath the shrine is covered in old royal sigils. At the center stands a stone door marked with the same thorned crest as the Crown of Thorns, but the seal still holds.
+CHOICE1=Use the pendant to open the seal|14|requires:item:queen_pendant
+CHOICE2=Search for the King's journal among the rubble|15
+CHOICE3=Leave before the shadows wake|10

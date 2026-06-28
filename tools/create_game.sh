@@ -1,6 +1,7 @@
 #!/bin/bash
 
-BASE_GAMES_DIR="../games"
+SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+BASE_GAMES_DIR="$SCRIPT_DIR/../games"
 
 echo "=============================="
 echo "       CREATE NEW GAME"
@@ -31,39 +32,24 @@ fi
 mkdir -p "$GAME_DIR/scenes"
 
 CONFIG_FILE="$GAME_DIR/config.txt"
-START_SCENE_FILE="$GAME_DIR/scenes/scene_1.txt"
+
+read -p "Enter the starting scene ID (example: intro): " start_scene
+
+if [ -z "$start_scene" ]; then
+    echo "Error: starting scene ID cannot be empty."
+    exit 1
+fi
 
 cat > "$CONFIG_FILE" <<EOF
 GAME_NAME=$game_name
-START_SCENE=scene_1
-EOF
-
-cat > "$START_SCENE_FILE" <<EOF
-ID=scene_1
-TEXT=This is the beginning of your story. Edit this scene to start your adventure.
-CHOICE1=Go to a good ending|ending_good
-CHOICE2=Go to a bad ending|ending_bad
-EOF
-
-cat > "$GAME_DIR/scenes/ending_good.txt" <<EOF
-ID=ending_good
-TEXT=This is the good ending of your custom game.
-END=1
-EOF
-
-cat > "$GAME_DIR/scenes/ending_bad.txt" <<EOF
-ID=ending_bad
-TEXT=This is the bad ending of your custom game.
-END=1
+START_SCENE=$start_scene
 EOF
 
 echo
 echo "Game created successfully."
 echo
-echo "Created files:"
+echo "Created:"
 echo "  $CONFIG_FILE"
-echo "  $START_SCENE_FILE"
-echo "  $GAME_DIR/scenes/ending_good.txt"
-echo "  $GAME_DIR/scenes/ending_bad.txt"
+echo "  $GAME_DIR/scenes/"
 echo
-echo "You can now edit the scene files to build your own story."
+echo "Create new scenes by /tools/add_scene.sh"

@@ -1,0 +1,3 @@
+ID=17
+TEXT=You lower your head and walk away from the palace. Without the Queen's scout, the warning goes unheard, the seal weakens, and by the next full moon the shadows spill into the streets. Eldoria falls, and the last hope of the kingdom dies with your silence.
+END=1

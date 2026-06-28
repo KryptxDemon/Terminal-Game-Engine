@@ -265,3 +265,80 @@
 [2026-04-27 15:22:37] Reached ending: ending_bad
 [2026-04-27 15:23:56] New game started for: /mnt/d/OSlab/Terminal-Game-Engine/games/Haunted Dungeon
 [2026-04-27 15:23:56] Loaded scene: scene_1
+[2026-06-28 22:12:19] Engine launched.
+[2026-06-28 22:12:45] Game selected: /mnt/d/Linux/Terminal-Game-Engine/games/Haunted Dungeon
+[2026-06-28 22:12:46] New game started for: /mnt/d/Linux/Terminal-Game-Engine/games/Haunted Dungeon
+[2026-06-28 22:12:46] Loaded scene: scene_1
+[2026-06-28 22:12:52] Player selected option 2: Exit
+[2026-06-28 22:12:52] Scene transition: scene_1 -> ending_good
+[2026-06-28 22:12:52] Loaded scene: ending_good
+[2026-06-28 22:12:52] Awarded +50 points to asif for first good ending in Haunted Dungeon : Arch Nemesis
+[2026-06-28 22:12:52] Reached ending: ending_good
+[2026-06-28 23:37:24] Engine launched.
+[2026-06-28 23:37:32] Game selected: /mnt/d/Linux/Terminal-Game-Engine/games/The Cursed Kingdom
+[2026-06-28 23:37:35] New game started for: /mnt/d/Linux/Terminal-Game-Engine/games/The Cursed Kingdom
+[2026-06-28 23:37:35] Loaded scene: 1
+[2026-06-28 23:41:43] Game saved to slot1 at scene: 1 for game: /mnt/d/Linux/Terminal-Game-Engine/games/The Cursed Kingdom
+[2026-06-28 23:41:44] Loaded scene: 1
+[2026-06-28 23:41:47] Returned to main menu from scene: 1
+[2026-06-28 23:51:04] Engine launched.
+[2026-06-29 00:35:40] Engine launched.
+[2026-06-29 00:36:34] Engine launched.
+[2026-06-29 00:37:06] Game selected: /mnt/d/Linux/Terminal-Game-Engine/games/The Cursed Kingdom
+[2026-06-29 00:37:11] New game started for: /mnt/d/Linux/Terminal-Game-Engine/games/The Cursed Kingdom
+[2026-06-29 00:37:11] Loaded scene: 1
+[2026-06-29 00:37:47] Player selected option 1: I am ready to play.
+[2026-06-29 00:37:47] Scene transition: 1 -> 2
+[2026-06-29 00:37:48] Loaded scene: 2
+[2026-06-29 00:38:24] Player selected option 1: Investigate the castle.
+[2026-06-29 00:38:24] Item added: queen_pendant
+[2026-06-29 00:38:24] Scene transition: 2 -> 3
+[2026-06-29 00:38:24] Loaded scene: 3
+[2026-06-29 00:38:47] Player selected option 3: Explore the castle dungeon
+[2026-06-29 00:38:47] Scene transition: 3 -> 7
+[2026-06-29 00:38:47] Loaded scene: 7
+[2026-06-29 00:38:58] Player selected option 1: Follow the tunnel
+[2026-06-29 00:38:58] Scene transition: 7 -> 11
+[2026-06-29 00:38:58] Loaded scene: 11
+[2026-06-29 00:39:02] Player selected option 2: Challenge the shadow directly
+[2026-06-29 00:39:02] Scene transition: 11 -> 13
+[2026-06-29 00:39:02] Loaded scene: 13
+[2026-06-29 00:39:02] Reached neutral ending in The Cursed Kingdom: 13
+[2026-06-29 00:39:02] Reached ending: 13
+[2026-06-29 00:39:42] New game started for: /mnt/d/Linux/Terminal-Game-Engine/games/The Cursed Kingdom
+[2026-06-29 00:39:42] Loaded scene: 1
+[2026-06-29 00:39:43] Player selected option 1: I am ready to play.
+[2026-06-29 00:39:43] Scene transition: 1 -> 2
+[2026-06-29 00:39:43] Loaded scene: 2
+[2026-06-29 00:39:44] Player selected option 3: Refuse the mission.
+[2026-06-29 00:39:44] Scene transition: 2 -> 17
+[2026-06-29 00:39:44] Loaded scene: 17
+[2026-06-29 00:39:44] Reached neutral ending in The Cursed Kingdom: 17
+[2026-06-29 00:39:44] Reached ending: 17
+[2026-06-29 00:39:46] Game ended by user.
+[2026-06-29 00:39:51] Engine launched.
+[2026-06-29 00:40:07] Game selected: /mnt/d/Linux/Terminal-Game-Engine/games/The Cursed Kingdom
+[2026-06-29 00:40:08] New game started for: /mnt/d/Linux/Terminal-Game-Engine/games/The Cursed Kingdom
+[2026-06-29 00:40:08] Loaded scene: 1
+[2026-06-29 00:40:09] Player selected option 1: I am ready to play.
+[2026-06-29 00:40:09] Scene transition: 1 -> 2
+[2026-06-29 00:40:09] Loaded scene: 2
+[2026-06-29 00:40:10] Player selected option 1: Investigate the castle.
+[2026-06-29 00:40:10] Item added: queen_pendant
+[2026-06-29 00:40:10] Scene transition: 2 -> 3
+[2026-06-29 00:40:10] Loaded scene: 3
+[2026-06-29 00:40:21] Game saved to slot2 at scene: 3 for game: /mnt/d/Linux/Terminal-Game-Engine/games/The Cursed Kingdom
+[2026-06-29 00:40:25] Loaded scene: 3
+[2026-06-29 00:40:26] Returned to main menu from scene: 3
+[2026-06-29 00:40:37] Game loaded from slot2. Game: /mnt/d/Linux/Terminal-Game-Engine/games/The Cursed Kingdom | Scene: 3
+[2026-06-29 00:40:37] Loaded scene: 3
+[2026-06-29 00:40:40] Returned to main menu from scene: 3
+[2026-06-29 00:55:28] Engine launched.
+[2026-06-29 00:55:39] Game selected: /mnt/d/Linux/Terminal-Game-Engine/games/TheLongKnight
+[2026-06-29 00:55:41] New game started for: /mnt/d/Linux/Terminal-Game-Engine/games/TheLongKnight
+[2026-06-29 00:55:41] Loaded scene: 1
+[2026-06-29 00:55:53] Player selected option 1: Visit Gendry
+[2026-06-29 00:55:53] Scene transition: 1 -> 2
+[2026-06-29 00:55:53] Loaded scene: 2
+[2026-06-29 00:55:53] Reached neutral ending in The Long Knight: 2
+[2026-06-29 00:55:53] Reached ending: 2

@@ -1,0 +1,5 @@
+ID=15
+TEXT=Behind a false shelf you find the King's journal. He wrote that the curse could only be broken after the pendant reveals the true seal and the blade is used against the shadow, not the flesh of the King.
+CHOICE1=Confront the throne room with the journal|5
+CHOICE2=Carry the journal to the buried chapel|11
+CHOICE3=Burn the journal and run|13

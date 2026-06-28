@@ -1,0 +1,5 @@
+ID=14
+TEXT=The seal breaks and a narrow altar chamber is revealed beneath the kingdom. The Crown of Thorns hangs above it on rusted chains, and an inscription reads: "Only steel guided by truth can end the curse."
+CHOICE1=Place the silver sword on the altar|16|requires:item:silver_sword
+CHOICE2=Take the crown and claim the throne|13
+CHOICE3=Return to the library to study the ritual|6

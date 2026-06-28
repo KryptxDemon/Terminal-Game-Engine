@@ -1,0 +1,5 @@
+ID=8
+TEXT=The blacksmith sighs before unlocking an old chest. Inside rests a silver sword engraved with the kingdom's crest. "The King believed this blade could harm creatures born from the curse. If you're truly going after him... take it."
+CHOICE1=Accept the sword and travel to the castle|3|item:+silver_sword
+CHOICE2=Ask where the King was last seen|11
+CHOICE3=Refuse the sword and leave the village|10

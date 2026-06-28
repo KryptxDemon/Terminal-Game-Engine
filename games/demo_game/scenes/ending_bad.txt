@@ -1,3 +1,0 @@
-ID=ending_bad
-TEXT=Your choices lead to suffering, and your journey ends in failure.
-END=1

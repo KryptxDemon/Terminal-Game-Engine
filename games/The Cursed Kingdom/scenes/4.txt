@@ -1,0 +1,5 @@
+ID=4
+TEXT=Greybrook Village is nearly deserted. Windows are boarded shut and villagers avoid eye contact. Three people seem willing to speak: a blacksmith, an old woman carrying a lantern, and a wounded hunter fresh from the forest.
+CHOICE1=Visit the blacksmith|8
+CHOICE2=Follow the old woman|9
+CHOICE3=Question the hunter|10

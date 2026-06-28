@@ -1,0 +1,5 @@
+ID=6
+TEXT=The royal library contains forgotten records dating back centuries. Hidden inside an old book is a journal describing an ancient prison beneath the kingdom where a terrible evil was sealed away.
+CHOICE1=Follow the map drawn in the journal|14
+CHOICE2=Continue searching the library|15
+CHOICE3=Ignore the journal and leave|7

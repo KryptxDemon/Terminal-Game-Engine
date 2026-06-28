@@ -1,3 +1,0 @@
-ID=ending_good
-TEXT=You find peace in the village and build a respected new life.
-END=1

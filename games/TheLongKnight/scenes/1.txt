@@ -1,0 +1,5 @@
+ID=1
+TEXT=Jon Snow hears the Night King is marching South. What should he do?
+CHOICE1=Visit Gendry|2
+CHOICE2=Meet Daenerys|3
+CHOICE3=Ignore the warning|6

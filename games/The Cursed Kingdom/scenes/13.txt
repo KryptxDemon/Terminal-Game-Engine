@@ -1,0 +1,3 @@
+ID=13
+TEXT=The mirror fractures, the curse spills free, and a dark shape wearing your face steps out of the shards. By dawn the kingdom loses one more soul to the shadow below the throne.
+END=1

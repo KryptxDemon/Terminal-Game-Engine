@@ -1,0 +1,5 @@
+ID=5
+TEXT=The throne room is abandoned. Dust covers the throne, and behind it stands a massive cracked mirror. Every time you move, your reflection hesitates for a split second before following.
+CHOICE1=Touch the mirror|11
+CHOICE2=Search behind the throne|12
+CHOICE3=Smash the mirror|13

@@ -60,6 +60,10 @@ print_header() {
     echo
 }
 
+refresh_save_dir() {
+    SAVE_DIR="$PROJECT_ROOT/database/saves/$CURRENT_USER"
+}
+
 pause_screen() {
     read -p "Press Enter to continue..."
 }
@@ -337,6 +341,7 @@ choose_save_slot() {
 }
 
 save_game() {
+    refresh_save_dir
     choose_save_slot
 
     mkdir -p "$SAVE_DIR"
@@ -364,6 +369,7 @@ save_game() {
 }
 
 load_game() {
+    refresh_save_dir
     mkdir -p "$SAVE_DIR"
 
     while true; do
@@ -634,6 +640,8 @@ mkdir -p "$SAVE_DIR"
 log_event "Engine launched."
 
 auth_menu
+
+refresh_save_dir
 
 while true; do
     show_main_menu

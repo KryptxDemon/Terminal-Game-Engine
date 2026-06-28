@@ -1,0 +1,2 @@
+GAME_NAME=The Cursed Kingdom
+START_SCENE=1

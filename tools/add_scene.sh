@@ -91,66 +91,80 @@ choose_game
 
 SCENES_DIR="$GAME_DIR/scenes"
 
-echo
-read -p "Enter new scene ID (example: scene_4 or castle_gate): " scene_id
+while true; do
 
-if [ -z "$scene_id" ]; then
-    echo "Scene ID cannot be empty."
-    exit 1
-fi
-
-SCENE_FILE="$SCENES_DIR/$scene_id.txt"
-
-if [ -f "$SCENE_FILE" ]; then
-    echo "Scene already exists: $SCENE_FILE"
-    exit 1
-fi
-
-echo
-read -p "Enter scene text: " scene_text
-
-if [ -z "$scene_text" ]; then
-    echo "Scene text cannot be empty."
-    exit 1
-fi
-
-echo
-read -p "Is this an ending scene? (y/n): " is_end
-
-{
-    echo "ID=$scene_id"
-    echo "TEXT=$scene_text"
-} > "$SCENE_FILE"
-
-if [[ "$is_end" == "y" || "$is_end" == "Y" ]]; then
-    echo "END=1" >> "$SCENE_FILE"
     echo
-    echo "Ending scene created successfully: $SCENE_FILE"
-    exit 0
-fi
+    read -p "Enter new scene ID (example: scene_4 or castle_gate): " scene_id
 
-echo
-read -p "How many choices do you want to add? " choice_count
+    if [ -z "$scene_id" ]; then
+        echo "Scene ID cannot be empty."
+        continue
+    fi
 
-if ! [[ "$choice_count" =~ ^[0-9]+$ ]]; then
-    echo "Invalid number."
-    rm -f "$SCENE_FILE"
-    exit 1
-fi
+    SCENE_FILE="$SCENES_DIR/$scene_id.txt"
 
-if [ "$choice_count" -le 0 ]; then
-    echo "A non-ending scene must have at least 1 choice."
-    rm -f "$SCENE_FILE"
-    exit 1
-fi
+    if [ -f "$SCENE_FILE" ]; then
+        echo "Scene already exists: $SCENE_FILE"
+        continue
+    fi
 
-for ((i=1; i<=choice_count; i++)); do
-    add_choice_line "$i" || {
-        echo "Failed to add choice. Removing incomplete scene."
-        rm -f "$SCENE_FILE"
-        exit 1
-    }
+    echo
+    read -p "Enter scene text: " scene_text
+
+    if [ -z "$scene_text" ]; then
+        echo "Scene text cannot be empty."
+        continue
+    fi
+
+    echo
+    read -p "Is this an ending scene? (y/n): " is_end
+
+    {
+        echo "ID=$scene_id"
+        echo "TEXT=$scene_text"
+    } > "$SCENE_FILE"
+
+    if [[ "$is_end" == "y" || "$is_end" == "Y" ]]; then
+        echo "END=1" >> "$SCENE_FILE"
+        echo
+        echo "Ending scene created successfully: $SCENE_FILE"
+    else
+        echo
+        read -p "How many choices do you want to add? " choice_count
+
+        if ! [[ "$choice_count" =~ ^[0-9]+$ ]]; then
+            echo "Invalid number."
+            rm -f "$SCENE_FILE"
+            continue
+        fi
+
+        if [ "$choice_count" -le 0 ]; then
+            echo "A non-ending scene must have at least 1 choice."
+            rm -f "$SCENE_FILE"
+            continue
+        fi
+
+        failed=0
+        for ((i=1; i<=choice_count; i++)); do
+            add_choice_line "$i" || failed=1
+        done
+
+        if [ "$failed" -eq 1 ]; then
+            echo "Failed to add choice. Removing incomplete scene."
+            rm -f "$SCENE_FILE"
+            continue
+        fi
+
+        echo
+        echo "Scene created successfully: $SCENE_FILE"
+    fi
+
+    echo
+    read -p "Create another scene? (y/n): " again
+
+    if [[ ! "$again" =~ ^[Yy]$ ]]; then
+        echo "Done."
+        break
+    fi
+
 done
-
-echo
-echo "Scene created successfully: $SCENE_FILE"

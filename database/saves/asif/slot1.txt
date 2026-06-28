@@ -1,0 +1,6 @@
+GAME_DIR=/mnt/d/Linux/Terminal-Game-Engine/games/The Cursed Kingdom
+CURRENT_SCENE=1
+HEALTH=100
+GOLD=0
+REPUTATION=0
+INVENTORY=

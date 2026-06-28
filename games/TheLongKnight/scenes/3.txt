@@ -1,0 +1,4 @@
+ID=3
+TEXT=Gendry tells you that there is a new sword in the locker.
+CHOICE1=Take the sword|5|item:+sword
+CHOICE2=Leave|7

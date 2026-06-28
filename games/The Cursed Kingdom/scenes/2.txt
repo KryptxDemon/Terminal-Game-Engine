@@ -1,0 +1,5 @@
+ID=2
+TEXT=The Queen hands you a sealed letter and a worn silver pendant. "Find the King before the next full moon... or there will be no kingdom left to save." Outside the palace, you must decide where to begin.
+CHOICE1=Investigate the castle.|3|item:+queen_pendant
+CHOICE2=Speak with the villagers.|4
+CHOICE3=Refuse the mission.|17
