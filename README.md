@@ -2,9 +2,9 @@
 
 This project is a terminal-based branching story engine built with Bash shell scripts for WSL/Linux. It lets you play story games, manage saves, track stats, and author new scenes with helper tools.
 
-## Documentation
+## Video
 
-Full project documentation is available in [docs/PROJECT_DOCUMENTATION.md](docs/PROJECT_DOCUMENTATION.md).
+Full project video is at : https://www.youtube.com/watch?v=NjYXwl9L7mY
 
 ## Quick Overview
 
